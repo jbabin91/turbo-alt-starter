@@ -1,20 +1,42 @@
 {
   "name": "turbo-alt-starter",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo build",
+    "clean": "rm -rf node_modules .turbo",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier -uw --cache .",
+    "format:check": "prettier -uc --cache .",
+    "postinstall": "pnpm lint:ws",
+    "lint": "turbo lint --continue -- --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:ws": "sherif",
+    "prepare": "is-ci || husky",
+    "typecheck": "turbo typecheck"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "czConfig": "./.commitlintrc.cjs"
+    }
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.11.28",
+    "cz-git": "^1.9.0",
+    "husky": "^9.0.11",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "turbo": "latest"
+    "prettier-plugin-packagejson": "^2.4.12",
+    "sherif": "^0.8.1",
+    "turbo": "^1.12.5",
+    "typescript": "^5.4.2"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@8.15.4",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }

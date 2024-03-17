@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist",
+    "clean": "rm -rf .turbo dist node_modules",
+    "dev": "bun run --hot src/index.ts",
+    "lint": "eslint . --max-warnings 0",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@repo/eslint-config/base"
+    ],
+    "root": true
+  },
+  "dependencies": {
+    "hono": "^4.1.1"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/bun": "latest",
+    "typescript": "^5.4.2"
+  }
+}
