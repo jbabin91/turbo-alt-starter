@@ -4,14 +4,21 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist"]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
+    "clean": {
+      "cache": false
     },
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "outputs": ["node_modules/.cache/.eslintcache"]
+    },
+    "preview": {
+      "dependsOn": ["^build"]
     },
     "typecheck": {
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
