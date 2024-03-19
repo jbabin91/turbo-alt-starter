@@ -13,6 +13,7 @@
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
     "lint:ws": "sherif",
     "prepare": "is-ci || husky",
+    "test": "turbo test",
     "typecheck": "turbo typecheck"
   },
   "config": {
@@ -22,9 +23,7 @@
     }
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.29",
     "cz-git": "^1.9.0",
     "husky": "^9.0.11",
     "is-ci": "^3.0.1",

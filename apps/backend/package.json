@@ -1,11 +1,13 @@
 {
   "name": "backend",
-  "version": "0.1.0",
+  "version": "1.0.50",
+  "module": "src/index.js",
   "scripts": {
     "build": "bun build src/index.ts --outdir dist",
     "clean": "rm -rf .turbo dist node_modules",
-    "dev": "bun run --hot src/index.ts",
+    "dev": "bun run --watch src/index.ts",
     "lint": "eslint . --max-warnings 0",
+    "start": "NODE_ENV=production bun dist/index.js",
     "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
@@ -16,12 +18,13 @@
     "root": true
   },
   "dependencies": {
-    "hono": "^4.1.1"
+    "@bogeychan/elysia-logger": "^0.0.18",
+    "elysia": "latest"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/bun": "latest",
+    "bun-types": "latest",
     "typescript": "^5.4.2"
   }
 }

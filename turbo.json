@@ -20,6 +20,7 @@
     "preview": {
       "dependsOn": ["^build"]
     },
+    "test": {},
     "typecheck": {
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     }
