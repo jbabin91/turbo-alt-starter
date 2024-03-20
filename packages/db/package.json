@@ -1,0 +1,60 @@
+{
+  "name": "@repo/db",
+  "version": "0.1.0",
+  "private": "true",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "db:check": "drizzle-kit check:pg --config ./drizzle.config.ts",
+    "db:generate": "drizzle-kit generate:pg --config ./drizzle.config.ts",
+    "db:migrate": "pnpm with-env tsx src/migrate.ts",
+    "db:seed": "pnpm with-env tsx src/seed.ts",
+    "db:studio": "pnpm with-env drizzle-kit studio --config drizzle.config.ts",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@repo/eslint-config/base"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/schema/*.ts",
+          "**/seed.ts"
+        ],
+        "rules": {
+          "sort-keys-fix/sort-keys-fix": "off"
+        }
+      },
+      {
+        "files": [
+          "**/migrate.ts",
+          "**/seed.ts"
+        ],
+        "rules": {
+          "unicorn/no-process-exit": "off"
+        }
+      }
+    ],
+    "root": true
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
+    "drizzle-orm": "^0.30.4",
+    "drizzle-zod": "^0.5.1",
+    "postgres": "^3.4.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "dotenv-cli": "^7.4.1",
+    "drizzle-kit": "^0.20.14",
+    "pg": "^8.11.3",
+    "tsx": "^4.7.1"
+  }
+}

@@ -1,8 +1,12 @@
 const scopes = [
-  { value: 'repo', name: 'repo: anything related to managing the repo itself' },
+  { value: 'repo', name: 'repo: any general updates to the repo itself' },
   { value: 'frontend', name: 'frontend: anything related to the frontend app' },
   { value: 'backend', name: 'backend: anything related to the backend app' },
-  { value: 'packages', name: 'packages: anything related to packages' },
+  {
+    value: 'packages',
+    name: 'packages: any general updates related to packages',
+  },
+  { value: '@repo/db', name: '@repo/db: anything related to the database' },
   { value: 'tooling', name: 'tooling: anything related to the tooling' },
 ];
 

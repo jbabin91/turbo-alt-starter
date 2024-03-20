@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "globalDependencies": ["**/.env", "**/.env.*local"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
@@ -9,6 +9,11 @@
     "clean": {
       "cache": false
     },
+    "db:check": {},
+    "db:generate": {},
+    "db:migrate": {},
+    "db:seed": {},
+    "db:studio": {},
     "dev": {
       "cache": false,
       "persistent": true
@@ -24,5 +29,6 @@
     "typecheck": {
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     }
-  }
+  },
+  "globalEnv": ["DATABASE_URL"]
 }
