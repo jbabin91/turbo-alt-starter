@@ -2,6 +2,6 @@ import baseConfig from '@repo/tailwind-config/base';
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['src/**/*.{ts,tsx}'],
+  content: [...baseConfig.content, '../../packages/ui/**/*.{ts,tsx}'],
   presets: [baseConfig],
 } satisfies Config;
