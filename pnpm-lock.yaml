@@ -66,6 +66,9 @@ importers:
 
   apps/frontend:
     dependencies:
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -88,6 +91,15 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.6.0
         version: 3.6.0(vite@5.2.2)
+      autoprefixer:
+        specifier: ^10.4.18
+        version: 10.4.18(postcss@8.4.37)
+      postcss:
+        specifier: ^8.4.37
+        version: 8.4.37
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.1
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
