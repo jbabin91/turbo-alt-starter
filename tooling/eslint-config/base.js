@@ -27,6 +27,7 @@ module.exports = {
           'error',
           { fixStyle: 'inline-type-imports', prefer: 'type-imports' },
         ],
+        '@typescript-eslint/no-unsafe-argument': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
@@ -57,6 +58,7 @@ module.exports = {
             shorthandLast: false,
           },
         ],
+        'react/prop-types': 'off',
       },
       settings: {
         react: { version: 'detect' },
