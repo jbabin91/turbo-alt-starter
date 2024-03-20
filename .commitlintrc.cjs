@@ -11,7 +11,7 @@ const scopes = [
 ];
 
 /** @type {import("cz-git").UserConfig} */
-const config = {
+module.exports = {
   alias: {
     b: 'chore(repo): bump dependencies',
   },
@@ -27,5 +27,3 @@ const config = {
   },
   skipQuestions: ['footer'],
 };
-
-module.exports = config;
