@@ -19,7 +19,8 @@
     "lint:ws": "sherif",
     "prepare": "is-ci || husky",
     "test": "turbo test",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "ui:add": "pnpm --filter @repo/ui ui:add"
   },
   "config": {
     "commitizen": {

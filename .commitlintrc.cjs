@@ -7,6 +7,7 @@ const scopes = [
     name: 'packages: any general updates related to packages',
   },
   { value: '@repo/db', name: '@repo/db: anything related to the database' },
+  { value: '@repo/ui', name: '@repo/ui: anything related to the shared UI' },
   { value: 'tooling', name: 'tooling: anything related to the tooling' },
 ];
 
