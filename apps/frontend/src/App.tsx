@@ -1,4 +1,4 @@
-import { ModeToggle } from '@repo/ui/components/mode-toggle';
+import { Button, ModeToggle } from '@repo/ui';
 import { useState } from 'react';
 
 import viteLogo from '/vite.svg';
@@ -20,9 +20,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <Button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
