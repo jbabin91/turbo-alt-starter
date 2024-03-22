@@ -12,7 +12,17 @@ export function Header() {
           About
         </Link>
       </nav>
-      <ModeToggle />
+      <div className="flex gap-2">
+        <div className="flex gap-2 p-2">
+          <Link className="[&.active]:font-bold" to="/login">
+            Login
+          </Link>
+          <Link className="[&.active]:font-bold" to="/signup">
+            Sign up
+          </Link>
+        </div>
+        <ModeToggle />
+      </div>
     </header>
   );
 }

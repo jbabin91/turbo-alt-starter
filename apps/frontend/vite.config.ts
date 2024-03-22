@@ -12,7 +12,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js',
         manualChunks: {
+          react: ['react', 'react-dom'],
+          tanstack: ['@tanstack/react-router'],
           ui: ['@repo/ui'],
         },
       },
