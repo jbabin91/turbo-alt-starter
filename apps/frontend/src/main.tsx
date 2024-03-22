@@ -4,13 +4,10 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from './App.tsx';
-import { Providers } from './providers/index.tsx';
+import { Providers } from './providers';
 
-ReactDOM.createRoot(document.querySelector('#root')!).render(
+ReactDOM.createRoot(document.querySelector('#app')!).render(
   <React.StrictMode>
-    <Providers>
-      <App />
-    </Providers>
+    <Providers />
   </React.StrictMode>,
 );

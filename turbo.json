@@ -30,5 +30,5 @@
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     }
   },
-  "globalEnv": ["DATABASE_URL"]
+  "globalEnv": ["DATABASE_URL", "PROD"]
 }
