@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "0.1.0",
-  "module": "src/index.js",
+  "module": "src/index.ts",
   "scripts": {
     "build": "bun build src/index.ts --outdir dist",
     "clean": "rm -rf .turbo dist node_modules",
