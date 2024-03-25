@@ -116,6 +116,25 @@ importers:
         specifier: ^5.2.6
         version: 5.2.6(@types/node@20.11.30)
 
+  packages/api:
+    dependencies:
+      '@repo/db':
+        specifier: workspace:^
+        version: link:../db
+      drizzle-orm:
+        specifier: ^0.30.4
+        version: 0.30.4(pg@8.11.3)(postgres@3.4.4)
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
+    devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../tooling/typescript-config
+
   packages/db:
     dependencies:
       '@paralleldrive/cuid2':
