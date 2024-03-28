@@ -28,6 +28,8 @@ export const selectPostSchema = createSelectSchema(posts);
 export type SelectPostInput = z.infer<typeof selectPostSchema>;
 export const insertPostSchema = createInsertSchema(posts);
 export type InsertPostInput = z.infer<typeof insertPostSchema>;
+export const updatePostSchema = insertPostSchema.partial().omit({ id: true });
+export type UpdatePostInput = z.infer<typeof updatePostSchema>;
 
 export const postsRelations = relations(posts, ({ one }) => ({
   author: one(users, {

@@ -21,6 +21,8 @@ export const selectUserSchema = createSelectSchema(users);
 export type SelectUserInput = z.infer<typeof selectUserSchema>;
 export const insertUserSchema = createInsertSchema(users);
 export type InsertUserInput = z.infer<typeof insertUserSchema>;
+export const updateUserSchema = insertUserSchema.partial().omit({ id: true });
+export type UpdateUserInput = z.infer<typeof updateUserSchema>;
 
 export const usersRelations = relations(users, ({ many }) => ({
   posts: many(posts),
