@@ -15,6 +15,13 @@
       "when": 1710966597304,
       "tag": "0001_mysterious_rafael_vega",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1711401184772,
+      "tag": "0002_fast_inhumans",
+      "breakpoints": true
     }
   ]
 }

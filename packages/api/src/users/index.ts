@@ -10,33 +10,56 @@ import { eq } from 'drizzle-orm';
 
 // Create
 export async function createUser(userData: InsertUserInput) {
+  console.log('createUser', userData);
+  // try {
+  const newUser = insertUserSchema.safeParse(userData);
+
+  if (!newUser.success) {
+    throw new Error('Invalid user data');
+  }
+
+  const existingUser = await getUserByEmail(newUser.data.email);
+
+  console.log(existingUser);
+
+  if (existingUser) {
+    throw new Error('User already exists');
+  }
+
+  await db.insert(users).values(newUser.data);
+
+  return {
+    message: 'User created successfully',
+  };
+  // } catch {
+  //   throw new Error('Internal server error');
+  // }
+}
+
+// Read
+export async function getUsers() {
+  console.log('getUsers');
   try {
-    const newUser = insertUserSchema.safeParse(userData);
-
-    if (!newUser.success) {
-      throw new Error('Invalid user data');
-    }
-
-    const existingUser = await getUserByEmail(newUser.data.email);
-
-    if (existingUser) {
-      throw new Error('User already exists');
-    }
-
-    await db.insert(users).values(newUser.data);
-
-    return {
-      message: 'User created successfully',
-    };
+    const users = await db.query.users.findMany({
+      columns: {
+        password: false,
+      },
+    });
+    return [...users];
   } catch {
     throw new Error('Internal server error');
   }
 }
 
-// Read
 export async function getUserById(userId: string) {
+  console.log('getUserById', userId);
   try {
-    const user = await db.select().from(users).where(eq(users.id, userId));
+    const user = await db.query.users.findMany({
+      columns: { password: false },
+      where: eq(users.id, userId),
+    });
+
+    console.log(user);
 
     return {
       ...user,
@@ -47,8 +70,12 @@ export async function getUserById(userId: string) {
 }
 
 export async function getUserByEmail(email: string) {
+  console.log('getUserByEmail', email);
   try {
-    const user = await db.select().from(users).where(eq(users.email, email));
+    const user = await db.query.users.findFirst({
+      columns: { password: false },
+      where: eq(users.email, email),
+    });
 
     return {
       ...user,
@@ -60,6 +87,7 @@ export async function getUserByEmail(email: string) {
 
 // Update
 export async function updateUser(userId: string, userData: UpdateUserInput) {
+  console.log('updateUser');
   try {
     const updatedUser = updateUserSchema.safeParse(userData);
 
@@ -88,6 +116,7 @@ export async function updateUser(userId: string, userData: UpdateUserInput) {
 
 // Delete
 export async function deleteUser(userId: string) {
+  console.log('deleteUser');
   try {
     const userExists = await db
       .select()
