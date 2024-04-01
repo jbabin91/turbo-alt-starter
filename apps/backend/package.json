@@ -1,13 +1,16 @@
 {
   "name": "backend",
   "version": "0.1.0",
+  "module": "src/index.ts",
   "scripts": {
     "build": "bun build src/index.ts --outdir dist",
     "clean": "rm -rf .turbo dist node_modules",
-    "dev": "bun run --hot src/index.ts",
+    "dev": "bun run with-env bun run --watch src/index.ts",
     "lint": "eslint . --max-warnings 0",
+    "start": "NODE_ENV=production bun dist/index.js",
     "test": "bun test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
   },
   "eslintConfig": {
     "extends": [
@@ -16,12 +19,17 @@
     "root": true
   },
   "dependencies": {
-    "hono": "^4.1.1"
+    "@bogeychan/elysia-logger": "^0.0.20",
+    "@elysiajs/swagger": "^1.0.3",
+    "@repo/api": "workspace:^",
+    "@repo/db": "workspace:^",
+    "elysia": "^1.0.9"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/bun": "latest",
-    "typescript": "^5.4.2"
+    "bun-types": "^1.0.35",
+    "dotenv-cli": "^7.4.1",
+    "typescript": "^5.4.3"
   }
 }

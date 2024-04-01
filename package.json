@@ -5,6 +5,11 @@
   "scripts": {
     "build": "turbo build",
     "clean": "rm -rf node_modules .turbo",
+    "db:check": "turbo db:check",
+    "db:generate": "turbo db:generate",
+    "db:migrate": "turbo db:migrate",
+    "db:seed": "turbo db:seed",
+    "db:studio": "turbo db:studio",
     "dev": "turbo dev",
     "format": "prettier -uw --cache .",
     "format:check": "prettier -uc --cache .",
@@ -13,7 +18,9 @@
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
     "lint:ws": "sherif",
     "prepare": "is-ci || husky",
-    "typecheck": "turbo typecheck"
+    "test": "turbo test",
+    "typecheck": "turbo typecheck",
+    "ui:add": "pnpm --filter @repo/ui ui:add"
   },
   "config": {
     "commitizen": {
@@ -22,9 +29,7 @@
     }
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.30",
     "cz-git": "^1.9.0",
     "husky": "^9.0.11",
     "is-ci": "^3.0.1",
@@ -32,8 +37,8 @@
     "prettier": "^3.2.5",
     "prettier-plugin-packagejson": "^2.4.12",
     "sherif": "^0.8.1",
-    "turbo": "^1.12.5",
-    "typescript": "^5.4.2"
+    "turbo": "^1.13.0",
+    "typescript": "^5.4.3"
   },
   "packageManager": "pnpm@8.15.4",
   "engines": {

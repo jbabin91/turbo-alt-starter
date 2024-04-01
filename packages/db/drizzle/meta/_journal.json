@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710964413593,
+      "tag": "0000_broad_pestilence",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710966597304,
+      "tag": "0001_mysterious_rafael_vega",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1711401184772,
+      "tag": "0002_fast_inhumans",
+      "breakpoints": true
+    }
+  ]
+}
