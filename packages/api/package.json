@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "@repo/db": "workspace:^",
-    "drizzle-orm": "^0.30.6",
-    "zod": "^3.22.4"
+    "drizzle-orm": "^0.30.8",
+    "zod": "^3.22.5"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

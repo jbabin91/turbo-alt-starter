@@ -46,10 +46,10 @@
   },
   "dependencies": {
     "@paralleldrive/cuid2": "^2.2.2",
-    "drizzle-orm": "^0.30.6",
+    "drizzle-orm": "^0.30.8",
     "drizzle-zod": "^0.5.1",
     "postgres": "^3.4.4",
-    "zod": "^3.22.4"
+    "zod": "^3.22.5"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -57,7 +57,7 @@
     "@repo/typescript-config": "workspace:*",
     "dotenv-cli": "^7.4.1",
     "drizzle-kit": "^0.20.14",
-    "pg": "^8.11.4",
-    "tsx": "^4.7.1"
+    "pg": "^8.11.5",
+    "tsx": "^4.7.2"
   }
 }

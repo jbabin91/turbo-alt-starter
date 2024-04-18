@@ -19,17 +19,17 @@
     "root": true
   },
   "dependencies": {
-    "@bogeychan/elysia-logger": "^0.0.20",
+    "@bogeychan/elysia-logger": "^0.0.21",
     "@elysiajs/swagger": "^1.0.3",
     "@repo/api": "workspace:^",
     "@repo/db": "workspace:^",
-    "elysia": "^1.0.10"
+    "elysia": "^1.0.13"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "bun-types": "^1.1.0",
+    "bun-types": "^1.1.4",
     "dotenv-cli": "^7.4.1",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.5"
   }
 }
